@@ -11,7 +11,6 @@ class Channel:
         self.__channel_id = channel_id
         self.fill_channel_data()
 
-
     def __str__(self):
         return f"{self.title} ({self.url})"
 
@@ -71,8 +70,3 @@ class Channel:
         """Выводит в консоль информацию о канале."""
         channel = self.get_service().channels().list(id=self.__channel_id, part='snippet,statistics').execute()
         print(json.dumps(channel, indent=2, ensure_ascii=False))
-
-
-# moscowpython = Channel('UC-OVMPlMA3-YCIeg4z5z23A')
-
-
